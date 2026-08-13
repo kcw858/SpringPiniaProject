@@ -33,13 +33,13 @@ public interface RecipeMapper {
 	public int recipeCount();
 	
 	//조회수 증가
-	@Update("UPDATE SET recipe SET "
+	@Update("UPDATE recipe SET "
 			+ "hit = hit+1 "
 			+ "WHERE no=#{no}")
-	public void hitIncrement(@Param("no") int no);
+	public void hitIncrement(int no);
 	
 	//상세보기
-	@Select("SELECT * FROM recopedetail "
+	@Select("SELECT * FROM recipedetail "
 			+ "WHERE no=#{no}")
-	public RecipeDetailVO recipeDtailData(@Param("no")int no);
+	public RecipeDetailVO recipeDtailData(int no);
 }
